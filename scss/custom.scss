@@ -1,0 +1,10 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+$primary: lightblue;
+$body-secondary-bg: lightyellow;
+
+// npm 專案管理 node package manager
+@import "../bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
