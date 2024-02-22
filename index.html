@@ -100,9 +100,16 @@
             <!-- 表單 -->
             <form action="">
               <h5 class="text-primary">留個言吧</h5>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nameInput" placeholder="請輸入..." />
+                <label for="nameInput">姓名或暱稱</label>
+              </div>
               <div class="mb-3">
                 <label for="emailInput" class="form-label">Email</label>
-                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" />
+                <div class="input-group">
+                  <input type="email" class="form-control" id="emailInput" placeholder="username" />
+                  <span class="input-group-text">@gmail.com</span>
+                </div>
               </div>
               <div class="mb-3">
                 <label for="moreInput" class="form-label">還想了解關於Bootstrap的...</label>
@@ -125,7 +132,7 @@
                 <label for="commentInput" class="form-label">有什麼想對我說的</label>
                 <textarea class="form-control" id="commentInput" rows="3"></textarea>
               </div>
-              <div class="form-check mb-3">
+              <div class="form-check form-switch mb-3">
                 <input class="form-check-input" type="checkbox" value="" id="subscribeCheckbox" />
                 <label class="form-check-label" for="subscribeCheckbox">是否訂閱電子報</label>
               </div>
