@@ -11,6 +11,9 @@
       crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="./scss/custom.css" />
     <style>
+      .accordion {
+        --bs-accordion-btn-color: royalblue;
+      }
       .paragraph {
         white-space: pre-line;
       }
@@ -98,8 +101,35 @@
                 </tbody>
               </table>
             </div>
+            <!-- 手風琴 -->
+            <div class="accordion mb-3" id="accordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gridItem" aria-expanded="false" aria-controls="gridItem">網格</button>
+                </h2>
+                <div id="gridItem" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                  <div class="accordion-body">Bootstrap的佈局系統，用於創建靈活的網頁佈局</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#buttonItem" aria-expanded="false" aria-controls="buttonItem">按鈕</button>
+                </h2>
+                <div id="buttonItem" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                  <div class="accordion-body">使用不同樣式和大小的按鈕增加互動性和功能</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modalItem" aria-expanded="false" aria-controls="modalItem">模式對話框</button>
+                </h2>
+                <div id="modalItem" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                  <div class="accordion-body">創建視窗對話框，用於顯示詳細內容或進行操作</div>
+                </div>
+              </div>
+            </div>
             <!-- 表單 -->
-            <form action="">
+            <form action="" class="mb-3">
               <h5 class="text-primary">留個言吧</h5>
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="nameInput" placeholder="請輸入..." />
@@ -139,6 +169,9 @@
               </div>
               <button type="submit" class="btn btn-primary">提交</button>
             </form>
+            <!-- alert -->
+            <div id="alertContainer"></div>
+            <button type="button" class="btn btn-secondary" id="alertBtn">點我給你一個驚喜</button>
           </div>
         </div>
         <div class="col-12 col-sm-4">
@@ -162,7 +195,7 @@
                 </p>
               </div>
               <div class="vstack gap-1 order-1" style="height: 200px">
-                <h6 class="text-truncate">簡化表單設計！Bootstrap Form 教學</h6>
+                <h6 class="text-truncate">簡化表單設計！Bootstrap Form 教學<span class="badge text-bg-danger">NEW</span></h6>
                 <small class="mt-auto">2023/5/18</small>
                 <p>10人看過</p>
               </div>
@@ -187,10 +220,35 @@
         </div>
       </div>
     </div>
-
+    <!-- <div class="alert alert-${type} alert-dismissible" role="alert">
+      <div>${message}</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div> -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
+    <script>
+      const alertContainerEl = document.getElementById('alertContainer');
+      const alertBtnEl = document.getElementById('alertBtn');
+
+      const appendAlert = (message, type) => {
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = [
+          `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+          `   <div>${message}</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>',
+        ].join('');
+
+        alertContainerEl.append(wrapper);
+      };
+
+      if (alertBtnEl) {
+        alertBtnEl.addEventListener('click', () => {
+          appendAlert('alert想跟你打招呼～', 'warning');
+        });
+      }
+    </script>
   </body>
 </html>
