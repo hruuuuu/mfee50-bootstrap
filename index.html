@@ -21,11 +21,13 @@
       <div class="row g-3">
         <div class="col-12 col-sm-8">
           <div class="p-4 bg-white rounded-3 border border-3">
+            <img src="https://pbs.twimg.com/media/FxtvoA7akAENgri.jpg" class="img-fluid" alt="..." />
             <h1 class="text-primary">Bootstrap Grid：打造網頁佈局的完美解決方案</h1>
             <div class="paragraph">
               嘿，大家好！今天我們要一起探索<mark>Bootstrap 的 <abbr title="網格">Grid</abbr> 系統</mark
               >，這是設計師和開發者的秘密武器，能夠輕鬆打造出令人驚艷的網頁佈局。快跟著我們一起踏上這趟有趣的旅程吧！ 在網頁設計中，佈局是關鍵要素之一。Bootstrap 的 Grid
               系統提供了一套簡單而強大的工具，讓我們能夠有效地管理和組織網頁中的內容。
+              <img src="./1.jpeg" alt="" class="img-thumbnail float-end" />
               首先，我們要認識兩個基本元素：列和欄。列就像是網格中的一行，而欄則是列中的一個小單位。透過列和欄的組合，我們可以建立出彈性且有結構的網頁佈局。 在 Bootstrap 中，我們使用 .row
               類別來創建一個列。這個類別會幫助我們將欄位放置在同一行中，讓它們保持整齊對齊。 接著，我們使用 .col-*
               類別來設定欄位的寬度比例。這個類別可以根據需要調整欄位的大小，讓它們適應不同的螢幕尺寸。 舉個例子來說，如果我們想要兩個欄位佔據同樣的寬度，可以使用 .col-6
@@ -43,7 +45,8 @@
           </div>
         </div>
         <div class="col-12 col-sm-4">
-          <div class="vstack gap-3">
+          <div class="vstack gap-3 sticky-top">
+            <!-- 更多文章 -->
             <div class="vstack gap-3 p-4 bg-white rounded-3">
               <h5 class="text-bg-primary p-2 rounded-2 text-center">更多文章</h5>
               <div class="vstack gap-1 order-2 justify-content-between" style="height: 200px">
@@ -67,9 +70,12 @@
                 <p>10人看過</p>
               </div>
             </div>
+            <!-- 關於我 -->
             <div class="vstack gap-3 p-4 bg-white rounded-3">
               <h5 class="text-bg-primary p-2 rounded-2 text-center">關於我</h5>
-              <img src="./1.jpeg" alt="" class="rounded-circle" />
+              <div class="w-100">
+                <img src="./3.png" alt="" class="rounded-circle w-100 h-100 object-fit-cover" />
+              </div>
               <strong class="text-center text-decoration-underline text-uppercase">Allie Xiao</strong>
               <dl class="row">
                 <dt class="col-5">Email</dt>
