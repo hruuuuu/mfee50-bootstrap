@@ -21,8 +21,34 @@
   </head>
 
   <body class="bg-body-secondary">
+    <nav class="navbar navbar-expand-sm bg-primary shadow sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Blog</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">內文</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">表格</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">其他</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">留言</a></li>
+                <li><a class="dropdown-item" href="#">按鈕</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container-md py-5">
       <div class="row g-3">
+        <!-- 文章 -->
         <div class="col-12 col-sm-8">
           <div class="p-4 bg-white rounded-3 border border-3">
             <img src="https://pbs.twimg.com/media/FxtvoA7akAENgri.jpg" class="img-fluid" alt="..." />
@@ -248,7 +274,7 @@
         </div>
         <!-- 側邊欄 -->
         <div class="col-12 col-sm-4">
-          <div class="vstack gap-3 sticky-top">
+          <div class="vstack gap-3 sticky-top z-0" style="top: 72px">
             <!-- 更多文章 -->
             <div class="vstack gap-3 p-4 bg-white rounded-3 shadow">
               <h5 class="text-bg-primary p-2 rounded-2 text-center">更多文章</h5>
