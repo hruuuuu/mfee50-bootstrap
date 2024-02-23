@@ -64,87 +64,120 @@
               <div class="lead">你可以參考 Bootstrap 官方文件和範例，深入瞭解更多關於 Grid 系統的功能和用法。</div>
               嘿，現在是時候發揮你的創意，用 Bootstrap Grid 打造出一個令人驚艷的網頁佈局吧！這個強大的工具將讓你的網頁更具結構性和視覺吸引力。加油，我們期待看到你的精彩作品！♪
             </div>
-            <!-- 表格 -->
-            <div class="table-responsive">
-              <table class="table table-striped table-hover align-middle caption-top mt-3">
-                <caption>
-                  這個表格提供了一個簡單的概覽，介紹了一些常見的 Bootstrap 元件及其功能：
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col" class="text-nowrap">編號</th>
-                    <th scope="col" class="text-nowrap">元件</th>
-                    <th scope="col" class="text-nowrap">英文名稱</th>
-                    <th scope="col" class="text-nowrap">描述</th>
-                    <th scope="col" class="text-nowrap">連結</th>
-                  </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>網格</td>
-                    <td>Grid</td>
-                    <td>Bootstrap的佈局系統，用於創建靈活的網頁佈局</td>
-                    <td>https://getbootstrap.com/docs/5.3/layout/grid/</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>按鈕</td>
-                    <td>Button</td>
-                    <td>使用不同樣式和大小的按鈕增加互動性和功能</td>
-                    <td>https://getbootstrap.com/docs/5.3/components/buttons/</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>模式對話框</td>
-                    <td>Modal</td>
-                    <td>創建視窗對話框，用於顯示詳細內容或進行操作</td>
-                    <td>https://getbootstrap.com/docs/5.3/components/modal/</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>圖片</td>
-                    <td>Image</td>
-                    <td>輕鬆添加圖片到網頁並進行適當的調整和排版</td>
-                    <td>https://getbootstrap.com/docs/5.3/content/images/</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>表格</td>
-                    <td>Table</td>
-                    <td>建立具有排序和過濾功能的美觀表格，展示數據內容</td>
-                    <td>https://getbootstrap.com/docs/5.3/content/tables/</td>
-                  </tr>
-                </tbody>
-              </table>
+            <!-- 進度條 -->
+            <div class="progress mt-3" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
             </div>
-            <!-- 手風琴 -->
-            <div class="accordion mb-3" id="accordion">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gridItem" aria-expanded="false" aria-controls="gridItem">網格</button>
-                </h2>
-                <div id="gridItem" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                  <div class="accordion-body">Bootstrap的佈局系統，用於創建靈活的網頁佈局</div>
+            <!-- 頁籤 -->
+            <ul class="nav nav-tabs mt-3" id="tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tableTab" data-bs-toggle="tab" data-bs-target="#tableTabPane" type="button" role="tab" aria-controls="tableTabPane" aria-selected="true">
+                  表格
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="accordionTab" data-bs-toggle="tab" data-bs-target="#accordionTabPane" type="button" role="tab" aria-controls="accordionTabPane" aria-selected="false">
+                  手風琴
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="tableTabPane" role="tabpanel" aria-labelledby="tableTab" tabindex="0">
+                <!-- 表格 -->
+                <div class="table-responsive">
+                  <table class="table table-striped table-hover align-middle caption-top mt-3">
+                    <caption>
+                      這個表格提供了一個簡單的概覽，介紹了一些常見的 Bootstrap 元件及其功能：
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-nowrap">編號</th>
+                        <th scope="col" class="text-nowrap">元件</th>
+                        <th scope="col" class="text-nowrap">英文名稱</th>
+                        <th scope="col" class="text-nowrap">描述</th>
+                        <th scope="col" class="text-nowrap">連結</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>網格</td>
+                        <td>Grid</td>
+                        <td>Bootstrap的佈局系統，用於創建靈活的網頁佈局</td>
+                        <td>https://getbootstrap.com/docs/5.3/layout/grid/</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>按鈕</td>
+                        <td>Button</td>
+                        <td>使用不同樣式和大小的按鈕增加互動性和功能</td>
+                        <td>https://getbootstrap.com/docs/5.3/components/buttons/</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>模式對話框</td>
+                        <td>Modal</td>
+                        <td>創建視窗對話框，用於顯示詳細內容或進行操作</td>
+                        <td>https://getbootstrap.com/docs/5.3/components/modal/</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>圖片</td>
+                        <td>Image</td>
+                        <td>輕鬆添加圖片到網頁並進行適當的調整和排版</td>
+                        <td>https://getbootstrap.com/docs/5.3/content/images/</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>表格</td>
+                        <td>Table</td>
+                        <td>建立具有排序和過濾功能的美觀表格，展示數據內容</td>
+                        <td>https://getbootstrap.com/docs/5.3/content/tables/</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#buttonItem" aria-expanded="false" aria-controls="buttonItem">按鈕</button>
-                </h2>
-                <div id="buttonItem" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                  <div class="accordion-body">使用不同樣式和大小的按鈕增加互動性和功能</div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modalItem" aria-expanded="false" aria-controls="modalItem">模式對話框</button>
-                </h2>
-                <div id="modalItem" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                  <div class="accordion-body">創建視窗對話框，用於顯示詳細內容或進行操作</div>
+              <div class="tab-pane fade" id="accordionTabPane" role="tabpanel" aria-labelledby="accordionTab" tabindex="0">
+                <!-- 手風琴 -->
+                <div class="accordion my-3" id="accordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gridItem" aria-expanded="false" aria-controls="gridItem">網格</button>
+                    </h2>
+                    <div id="gridItem" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                      <div class="accordion-body">Bootstrap的佈局系統，用於創建靈活的網頁佈局</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#buttonItem" aria-expanded="false" aria-controls="buttonItem">按鈕</button>
+                    </h2>
+                    <div id="buttonItem" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                      <div class="accordion-body">使用不同樣式和大小的按鈕增加互動性和功能</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modalItem" aria-expanded="false" aria-controls="modalItem">模式對話框</button>
+                    </h2>
+                    <div id="modalItem" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                      <div class="accordion-body">創建視窗對話框，用於顯示詳細內容或進行操作</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- 頁碼 -->
+            <nav>
+              <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">上一頁</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
+              </ul>
+            </nav>
             <!-- 表單 -->
             <form action="" class="mb-3">
               <h5 class="text-primary">留個言吧</h5>
@@ -187,10 +220,33 @@
               <button type="submit" class="btn btn-primary">提交</button>
             </form>
             <!-- alert -->
-            <div id="alertContainer"></div>
-            <button type="button" class="btn btn-secondary" id="alertBtn">點我給你一個驚喜</button>
+            <div class="mb-3">
+              <div id="alertContainer"></div>
+              <button type="button" class="btn btn-secondary" id="alertBtn">點我給你一個驚喜</button>
+            </div>
+            <!-- toast -->
+            <div class="mb-3">
+              <button type="button" class="btn btn-primary" id="toastBtn">toast想跟你打招呼</button>
+              <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                  <div class="toast-header">
+                    <strong class="me-auto">Toast說</strong>
+                    <small>0分鐘前</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                  </div>
+                  <div class="toast-body">哈囉～～～</div>
+                </div>
+              </div>
+            </div>
+            <!-- popover -->
+            <button type="button" class="btn btn-danger mb-3" data-bs-toggle="popover" data-bs-title="popover說" data-bs-content="嗨～～～">popover想跟你打招呼</button>
+            <!-- modal -->
+            <div class="mb-3">
+              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal">modal想跟你打招呼</button>
+            </div>
           </div>
         </div>
+        <!-- 側邊欄 -->
         <div class="col-12 col-sm-4">
           <div class="vstack gap-3 sticky-top">
             <!-- 更多文章 -->
@@ -203,12 +259,15 @@
                   <p>10人看過</p>
                 </div>
               </div>
-              <div class="vstack gap-1 order-3">
-                <h6 class="text-truncate">華麗又實用！打造漂亮按鈕的 Bootstrap 教學</h6>
-                <small>2023/5/22</small>
+              <div class="vstack gap-1 order-3 placeholder-wave">
+                <h6 class="text-truncate"><span class="placeholder col-6 placeholder-lg"></span></h6>
+                <small><span class="placeholder col-3 placeholder-sm"></span></small>
                 <p>
-                  在這篇教學中，我們將一起探索 Bootstrap 的按鈕元件，讓我們的網頁華麗又實用！我們將學習如何使用不同的按鈕樣式、大小和狀態，並添加圖標或下拉選單等功能。透過
-                  Bootstrap的強大按鈕元件，我們可以輕鬆打造出各種吸引人的互動元素～
+                  <span class="placeholder col-8"></span>
+                  <span class="placeholder col-3"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-5"></span>
                 </p>
               </div>
               <div class="vstack gap-1 order-1" style="height: 200px">
@@ -221,6 +280,23 @@
                 <small class="mt-auto">2023/5/18</small>
                 <p>10人看過</p>
               </div>
+            </div>
+            <div class="vstack gap-3 p-4 bg-white rounded-3 shadow">
+              <h5 class="text-bg-primary p-2 rounded-2 text-center">文章分類</h5>
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                  教學
+                  <span class="badge text-bg-primary rounded-pill">14</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                  資源分享
+                  <span class="badge text-bg-primary rounded-pill">2</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                  實作範例
+                  <span class="badge text-bg-primary rounded-pill">1</span>
+                </li>
+              </ul>
             </div>
             <!-- 關於我 -->
             <div class="vstack gap-3 p-4 bg-white rounded-3">
@@ -242,6 +318,22 @@
         </div>
       </div>
     </div>
+    <!-- modal -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">modal說</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">哈哈～～～</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+            <button type="button" class="btn btn-primary">再開一個</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- <div class="alert alert-${type} alert-dismissible" role="alert">
       <div>${message}</div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -251,6 +343,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
     <script>
+      // alert
       const alertContainerEl = document.getElementById('alertContainer');
       const alertBtnEl = document.getElementById('alertBtn');
 
@@ -271,6 +364,23 @@
           appendAlert('alert想跟你打招呼～', 'warning');
         });
       }
+    </script>
+    <script>
+      // toast
+      const toastBtnEl = document.getElementById('toastBtn');
+      const toastEl = document.getElementById('toast');
+
+      if (toastBtnEl) {
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastEl);
+        toastBtnEl.addEventListener('click', () => {
+          toastBootstrap.show();
+        });
+      }
+    </script>
+    <script>
+      // popover
+      const popoverBtnList = document.querySelectorAll('[data-bs-toggle="popover"]');
+      const popoverList = [...popoverBtnList].map((v) => new bootstrap.Popover(v));
     </script>
   </body>
 </html>
