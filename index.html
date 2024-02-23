@@ -17,41 +17,91 @@
       .paragraph {
         white-space: pre-line;
       }
+      .photo {
+        width: 100%;
+        height: 200px;
+      }
     </style>
   </head>
 
   <body class="bg-body-secondary">
-    <nav class="navbar navbar-expand-sm bg-primary shadow sticky-top">
+    <!-- 集中定義 svg icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="ballon" viewBox="0 0 16 16">
+        <path
+          fill-rule="evenodd"
+          d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984M13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3 3 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0m-6.938-.495a2 2 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5s-.226-.504-.498-.459a3 3 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495" />
+      </symbol>
+      <symbol id="sun" viewBox="0 0 16 16">
+        <path
+          d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+      </symbol>
+    </svg>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-sm bg-primary shadow sticky-top" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Blog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar">
-          <ul class="navbar-nav me-auto">
+          <ul class="nav nav-pills">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">內文</a>
+              <a class="nav-link active" aria-current="page" href="#content">內文</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">表格</a>
+              <a class="nav-link" href="#tab">表格</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">其他</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">留言</a></li>
-                <li><a class="dropdown-item" href="#">按鈕</a></li>
+                <li><a class="dropdown-item" href="#comment">留言</a></li>
+                <li><a class="dropdown-item" href="#btns">按鈕</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container-md py-5">
+    <!-- scrollspy -->
+    <div class="container-md py-5" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
       <div class="row g-3">
         <!-- 文章 -->
         <div class="col-12 col-sm-8">
           <div class="p-4 bg-white rounded-3 border border-3">
-            <img src="https://pbs.twimg.com/media/FxtvoA7akAENgri.jpg" class="img-fluid" alt="..." />
+            <!-- carousel -->
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-theme="dark">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="photo">
+                    <img src="https://pbs.twimg.com/media/FxtvoA7akAENgri.jpg" class="w-100 h-100 object-fit-cover" alt="..." />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="photo">
+                    <img src="https://cremechii.com/cdn/shop/files/Untitled_Artwork_768f9c90-1374-476e-85e9-a5eea06e646b_364x.png?v=1647076451" class="w-100 h-100 object-fit-cover" alt="..." />
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="photo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIwO7RS-3vcESNAUFMgp9sNkFw5znVFYuVgw&usqp=CAU" class="w-100 h-100 object-fit-cover" alt="..." />
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
             <!-- dropdown -->
             <div class="dropdown mt-3">
               <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">文章分類</button>
@@ -69,7 +119,8 @@
                 <li class="breadcrumb-item active" aria-current="page">Bootstrap Grid</li>
               </ol>
             </nav>
-            <h1 class="text-primary">Bootstrap Grid：打造網頁佈局的完美解決方案</h1>
+            <div></div>
+            <h1 class="text-primary" id="content">Bootstrap Grid：打造網頁佈局的完美解決方案</h1>
             <!-- 內文 -->
             <div class="paragraph">
               嘿，大家好！今天我們要一起探索<mark>Bootstrap 的 <abbr title="網格">Grid</abbr> 系統</mark
@@ -205,7 +256,7 @@
               </ul>
             </nav>
             <!-- 表單 -->
-            <form action="" class="mb-3">
+            <form action="" class="mb-3" id="comment">
               <h5 class="text-primary">留個言吧</h5>
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="nameInput" placeholder="請輸入..." />
@@ -246,13 +297,22 @@
               <button type="submit" class="btn btn-primary">提交</button>
             </form>
             <!-- alert -->
-            <div class="mb-3">
+            <div class="mb-3" id="btns">
               <div id="alertContainer"></div>
-              <button type="button" class="btn btn-secondary" id="alertBtn">點我給你一個驚喜</button>
+              <button type="button" class="btn btn-secondary" id="alertBtn">
+                <svg width="16" height="16" fill="currentColor" class="bi bi-balloon">
+                  <use xlink:href="#ballon" />
+                </svg>
+                點我給你一個驚喜
+              </button>
             </div>
             <!-- toast -->
             <div class="mb-3">
-              <button type="button" class="btn btn-primary" id="toastBtn">toast想跟你打招呼</button>
+              <button type="button" class="btn btn-primary" id="toastBtn">
+                <svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high">
+                  <use xlink:href="#sun" /></svg
+                >toast想跟你打招呼
+              </button>
               <div class="toast-container position-fixed bottom-0 end-0 p-3">
                 <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                   <div class="toast-header">
